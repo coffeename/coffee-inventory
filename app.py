@@ -39,6 +39,7 @@ from users import users_bp
 from products import products_bp
 from forecast_routes import forecast_bp
 from stock_notifications import stock_bp
+from analytics_routes import analytics_bp
 
 app.register_blueprint(auth_bp)
 app.register_blueprint(orders_bp)
@@ -46,6 +47,7 @@ app.register_blueprint(users_bp)
 app.register_blueprint(products_bp)
 app.register_blueprint(forecast_bp)
 app.register_blueprint(stock_bp)
+app.register_blueprint(analytics_bp)
 
 if __name__ == '__main__':
     app.run(debug=True)

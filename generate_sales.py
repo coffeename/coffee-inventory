@@ -27,7 +27,7 @@ def generate_sales():
             continue
         barista_id = row[0]
 
-        orders_per_day = random.randint(2, 10)
+        orders_per_day = random.randint(10, 33)
 
         for _ in range(orders_per_day):
             hour = random.randint(9, 20)

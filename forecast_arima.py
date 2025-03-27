@@ -19,17 +19,12 @@ HOLIDAYS = [
 ]
 
 def mark_holidays(df):
-    """ Додає колонку is_holiday=1, якщо дата входить до HOLIDAYS, інакше 0. """
+
     df['is_holiday'] = df.index.strftime('%Y-%m-%d').isin(HOLIDAYS).astype(int)
     return df
 
 def get_total_sales_dataframe():
-    """ 
-    Витягує суму продажів по всіх товарах (за датою), 
-    повертає DataFrame з індексом-датою і колонками:
-      - total_sold
-      - is_holiday (0/1)
-    """
+
     conn = pymysql.connect(
         host="localhost",
         user="root",
@@ -63,10 +58,7 @@ def get_total_sales_dataframe():
     return df
 
 def build_arima_forecast(df, forecast_days=30):
-    """
-    Приймає DataFrame з колонками: total_sold, is_holiday.
-    Використовує auto_arima з exogenous, повертає прогноз на forecast_days.
-    """
+    
     ts = df['total_sold']
     exog = df[['is_holiday']]
 
