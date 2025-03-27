@@ -4,7 +4,5 @@
 
 ## Quick Start
 
-1. Create and activate virtual environment:
-   ```bash
-   python -m venv venv
-   venv\Scripts\activate     
+.\venv\Scripts\activate
+python app.py
