@@ -4,5 +4,5 @@
 
 ## Quick Start
 
-.\venv\Scripts\activate
+.\venv\Scripts\activate --->
 python app.py
